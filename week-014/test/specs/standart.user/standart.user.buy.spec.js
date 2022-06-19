@@ -1,5 +1,5 @@
-import LoginSauce from  '../pageobjects/sauce.login';
-import InventorySauce from  '../pageobjects/sauce.inventory';
+import LoginSauce from  '../../pageobjects/sauce.login';
+import InventorySauce from  '../../pageobjects/sauce.inventory';
 
 describe ('This test check Standard User buy processes', () => {
     it ('Standart User should login whit valid credentials successfully', async () => {

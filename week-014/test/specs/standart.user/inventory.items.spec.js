@@ -1,5 +1,5 @@
-import LoginSauce from  '../pageobjects/sauce.login';
-import InventorySauce from  '../pageobjects/sauce.inventory';
+import LoginSauce from  '../../pageobjects/sauce.login';
+import InventorySauce from  '../../pageobjects/sauce.inventory';
 
 beforeAll('We need login first', () => {
     LoginSauce.open();
