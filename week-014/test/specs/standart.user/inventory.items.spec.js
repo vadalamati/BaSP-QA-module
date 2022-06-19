@@ -1,5 +1,6 @@
 import LoginSauce from  '../../pageobjects/sauce.login';
 import InventorySauce from  '../../pageobjects/sauce.inventory';
+import Header from  '../../pageobjects/header.sauce';
 
 beforeAll('We need login first', () => {
     // LoginSauce.open();
@@ -17,12 +18,12 @@ describe('Check web interactions', () => {
         await expect(InventorySauce.allAddBtn).toBeDisplayed();
     });
     it('Open and close navbar', async ()=>{
-        await expect(InventorySauce.burguerMenu).toBeDisplayed();
-        await expect(InventorySauce.burguerMenu).toBeClickable();
-        await InventorySauce.burguerMenu.click();
-        await expect(InventorySauce.navBar).toBeDisplayed();
-        await InventorySauce.navCloseBtn.click();
-        await expect(InventorySauce.burguerMenu).toBeDisplayed();
+        await expect(Header.burguerMenu).toBeDisplayed();
+        await expect(Header.burguerMenu).toBeClickable();
+        await Header.burguerMenu.click();
+        await expect(Header.navBar).toBeDisplayed();
+        await Header.navCloseBtn.click();
+        await expect(Header.burguerMenu).toBeDisplayed();
     });
 
     it ('Navbar About should let us to the Sauce Lab Web', async ()=> {
@@ -40,10 +41,10 @@ describe('Check web interactions', () => {
         await expect(InventorySauce.selectBtn).toHaveChildren(4);
     });
 
-    it ('Check twitter button redirect us to the twiiter', async ()=> {
-        await expect(InventorySauce.twitterBtn).toBeDisplayed();
-        await expect(InventorySauce.twitterBtn).toBeClickable();
-        const pageTwitter =  await InventorySauce.twitterBtn.click();
-        await expect(pageTwitter).respond('https://twitter.com/saucelabs');
-    });
+    // it ('Check twitter button redirect us to the twiiter', async ()=> {
+    //     await expect(InventorySauce.twitterBtn).toBeDisplayed();
+    //     await expect(InventorySauce.twitterBtn).toBeClickable();
+    //     const pageTwitter =  await InventorySauce.twitterBtn.click();
+    //     await expect(pageTwitter).respond('https://twitter.com/saucelabs');
+    // });
 });

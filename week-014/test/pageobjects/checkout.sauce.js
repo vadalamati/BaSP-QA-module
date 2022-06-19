@@ -3,17 +3,17 @@ class CheckoutSauce {
     get continueButton () {return $('#continue')};
     get firstNameInput () {return $('#first-name')};
     get lastNameInput () {return $('#last-name')};
-    get zipcCodeInput () {return $('#postal-code')};
+    get zipCodeInput () {return $('#postal-code')};
     get cartButton  () {return $('#shopping_cart_container')};
 
     async setFirstName(firstName) {
-        await this.inputfirstNameInput.setValue(firstName);
+        await this.firstNameInput.setValue(firstName);
     };
     async setLastName(lastname) {
         await this.lastNameInput.setValue(lastname);
     };
     async setZip(zip) {
-        await this.zipcCodeInput.setValue(zip);
+        await this.zipCodeInput.setValue(zip);
     };
 
     async completeForm (firstName, lastname, zip) {

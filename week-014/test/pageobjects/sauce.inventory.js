@@ -1,5 +1,4 @@
 class InventorySauce {
-
     get btnAddSlb () {return $('#add-to-cart-sauce-labs-backpack')};
     get btnRemSlb () {return $('#remove-sauce-labs-backpack')};
     get btnAddSlbl () {return $('#add-to-cart-sauce-labs-bike-light')};
@@ -12,17 +11,10 @@ class InventorySauce {
     get btnRemSlo () {return $('#remove-sauce-labs-onesie')};
     get btnAddTtt () {return $('#add-to-cart-test\.allthethings\(\)-t-shirt-\(red\)')};
     get btnRemTtt () {return $('#remove-test\.allthethings\(\)-t-shirt-\(red\)')};
-    get burguerMenu () {return $('#react-burger-menu-btn')};
-    get navBar () {return $('.bm-menu-wrap')};
-    get navCloseBtn () {return $('#react-burger-cross-btn')};
-    get cartBtn () {return $('#shopping_cart_container')};
     get selectBtn () {return $('.product_sort_container')};
-    get twitterBtn () {return $('.social_twitter')};
-    get facebookBtn () {return $('.social_facebook')};
-    get footerImg () {return $('.footer_robot')};
-    get headerLogo  () {return $('.app_logo')};
-    get allAddBtn () {return $('.btn_primary')};
-    get allRemBtn () {return $('.btn_secondary');}
+    get cartBtn () {return $('#shopping_cart_container')};
+
+
 
     async addItemsTocart ()  {
         await this.btnAddSlb.click();
