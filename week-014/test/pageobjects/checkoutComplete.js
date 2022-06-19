@@ -3,4 +3,4 @@ class CheckoutSauceComplete {
     get ponyImg () {return $('.pony_express')}
 }
 
-export default new CheckoutSauceComplete(); 
+export default new CheckoutSauceComplete();

@@ -1,6 +1,4 @@
-import Sauce from './page.sauce';
-
-class LoginSauce extends Sauce {
+class LoginSauce {
     get inputUsername () {return $('#user-name')}
     get inputPassword () {return $('#password');}
     get btnLogin () {return $('#login-button');}
@@ -18,14 +16,15 @@ class LoginSauce extends Sauce {
         await this.inputPassword.setValue(password);
     }
 
+    async open () {
+            await browser.url(`https://www.saucedemo.com/`);
+        }
+
     async login (username, password) {
+        await this.open();
         await this.setUsername(username);
         await this.setPassword(password);
         await this.btnLogin.click();
-    }
-
-    open () {
-        return super.open('');
     }
 }
 

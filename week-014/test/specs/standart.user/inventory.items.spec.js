@@ -2,7 +2,7 @@ import LoginSauce from  '../../pageobjects/sauce.login';
 import InventorySauce from  '../../pageobjects/sauce.inventory';
 
 beforeAll('We need login first', () => {
-    LoginSauce.open();
+    // LoginSauce.open();
     LoginSauce.login('standard_user', 'secret_sauce');
 });
 
@@ -15,7 +15,7 @@ describe('Check web interactions', () => {
         await expect(InventorySauce.allRemBtn).toBeClickable();
         await InventorySauce.allRemBtn.click();
         await expect(InventorySauce.allAddBtn).toBeDisplayed();
-    })
+    });
     it('Open and close navbar', async ()=>{
         await expect(InventorySauce.burguerMenu).toBeDisplayed();
         await expect(InventorySauce.burguerMenu).toBeClickable();
@@ -24,13 +24,26 @@ describe('Check web interactions', () => {
         await InventorySauce.navCloseBtn.click();
         await expect(InventorySauce.burguerMenu).toBeDisplayed();
     });
-    it ('Filter selector must have 4 childrens', async ()=> {
+
+    it ('Navbar About should let us to the Sauce Lab Web', async ()=> {
+        await expect(InventorySauce.selectBtn).toHaveChildren(4);
+    });
+
+    it ('Navbar Logout should let us to the login', async ()=> {
         await expect(InventorySauce.selectBtn).toHaveChildren(4);
     })
+    it ('Navbar About should let us to the Sauce Lab Web', async ()=> {
+        await expect(InventorySauce.selectBtn).toHaveChildren(4);
+    })
+
+    it ('Filter selector must have 4 childrens', async ()=> {
+        await expect(InventorySauce.selectBtn).toHaveChildren(4);
+    });
+
     it ('Check twitter button redirect us to the twiiter', async ()=> {
         await expect(InventorySauce.twitterBtn).toBeDisplayed();
         await expect(InventorySauce.twitterBtn).toBeClickable();
         const pageTwitter =  await InventorySauce.twitterBtn.click();
         await expect(pageTwitter).respond('https://twitter.com/saucelabs');
-    })
+    });
 });
