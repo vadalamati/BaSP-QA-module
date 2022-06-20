@@ -17,26 +17,6 @@ describe('Check web interactions', () => {
         await InventorySauce.allRemBtn.click();
         await expect(InventorySauce.allAddBtn).toBeDisplayed();
     });
-    it('Open and close navbar', async ()=>{
-        await expect(Header.burguerMenu).toBeDisplayed();
-        await expect(Header.burguerMenu).toBeClickable();
-        await Header.burguerMenu.click();
-        await expect(Header.navBar).toBeDisplayed();
-        await Header.navCloseBtn.click();
-        await expect(Header.burguerMenu).toBeDisplayed();
-    });
-
-    it ('Navbar About should let us to the Sauce Lab Web', async ()=> {
-        await expect(InventorySauce.selectBtn).toHaveChildren(4);
-    });
-
-    it ('Navbar Logout should let us to the login', async ()=> {
-        await expect(InventorySauce.selectBtn).toHaveChildren(4);
-    })
-    it ('Navbar About should let us to the Sauce Lab Web', async ()=> {
-        await expect(InventorySauce.selectBtn).toHaveChildren(4);
-    })
-
     it ('Filter selector must have 4 childrens', async ()=> {
         await expect(InventorySauce.selectBtn).toHaveChildren(4);
     });

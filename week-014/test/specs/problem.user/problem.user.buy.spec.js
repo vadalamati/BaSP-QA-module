@@ -25,5 +25,6 @@ describe ('This test check Glich User buy processes', () => {
         await expect (CheckoutSauce.firstNameInput).toHaveElementClassContaining('form_input error');
         await expect (CheckoutSauce.lastNameInput).toHaveElementClassContaining('form_input error');
         await expect (CheckoutSauce.zipCodeInput).toHaveElementClassContaining('form_input error');
+        await expect (CheckoutSauce.errorContainer).toBeDisplayed();
     })
 });

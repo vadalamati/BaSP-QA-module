@@ -5,6 +5,7 @@ class CheckoutSauce {
     get lastNameInput () {return $('#last-name')};
     get zipCodeInput () {return $('#postal-code')};
     get cartButton  () {return $('#shopping_cart_container')};
+    get errorContainer () {return $('.error-message-container.error')};
 
     async setFirstName(firstName) {
         await this.firstNameInput.setValue(firstName);

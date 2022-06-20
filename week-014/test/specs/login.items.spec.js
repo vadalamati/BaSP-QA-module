@@ -1,8 +1,8 @@
 import LoginSauce from  '../pageobjects/sauce.login';
 
-    beforeAll('open browser', async () => {
-        LoginSauce.open();
-    });
+beforeAll('open browser', async () => {
+    LoginSauce.open();
+});
 describe ('This test check all elements for login page', () => {
     it('Check BotImg has been deployed', async () =>{
         await expect(LoginSauce.botImg).toBeDisplayed();
