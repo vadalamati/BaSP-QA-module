@@ -2,13 +2,14 @@ import LoginSauce from  '../../pageobjects/sauce.login';
 import InventorySauce from  '../../pageobjects/sauce.inventory';
 import CartSauce from '../../pageobjects/cart.sauce';
 import CheckoutSauce from  '../../pageobjects/checkout.sauce';
-import CheckoutSauceTwo from  '../../pageobjects/checkout.2'
-import CheckoutComplete from  '../../pageobjects/checkoutComplete'
+import CheckoutSauceTwo from  '../../pageobjects/checkout.2';
+import CheckoutComplete from  '../../pageobjects/checkoutComplete';
 
-describe ('This test check Standard User buy processes', () => {
-    it ('Standart User should login whit valid credentials successfully', async () => {
-        // await LoginSauce.open();
-        await LoginSauce.login('standard_user', 'secret_sauce');
+describe ('This test check Glich User buy processes', () => {
+    it ('Glich User should login whit valid credentials successfully', async () => {
+        await LoginSauce.open();
+        await LoginSauce.login('performance_glitch_user', 'secret_sauce');
+        console.log(browser.getTimeouts());
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     })
     it('We can add items to cart and go there', async ()=> {
@@ -26,7 +27,7 @@ describe ('This test check Standard User buy processes', () => {
     })
     it ('Check the checkout complete', async () =>{
         await CheckoutComplete.backHomeButton.click();
+        console.log(browser.getTimeouts());
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     })
 });
-
