@@ -2,13 +2,12 @@ import LoginSauce from  '../../pageobjects/sauce.login';
 import InventorySauce from  '../../pageobjects/sauce.inventory';
 import CartSauce from '../../pageobjects/cart.sauce';
 import CheckoutSauce from  '../../pageobjects/checkout.sauce';
-import CheckoutSauceTwo from  '../../pageobjects/checkout.2';
-import CheckoutComplete from  '../../pageobjects/checkoutComplete';
+
 
 describe ('This test check Glich User buy processes', () => {
     it ('Glich User should login whit valid credentials successfully', async () => {
         await LoginSauce.open();
-        await LoginSauce.login('performance_glitch_user', 'secret_sauce');
+        await LoginSauce.login('problem_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
 
     })
@@ -22,13 +21,9 @@ describe ('This test check Glich User buy processes', () => {
     it('check the checkout form', async () => {
         await CheckoutSauce.completeForm('Matias', 'Vadala', '2000');
     })
-    it ('check the checkout step two', async () =>{
-        await CheckoutSauceTwo.finishButton.click();
-    })
-    it ('Check the checkout complete', async () =>{
-        await CheckoutComplete.backHomeButton.click();
-        console.log(browser.getTimeouts());
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+    it ('The form have an error cause can not continue', async () =>{
+        await expect (CheckoutSauce.firstNameInput).toHaveElementClassContaining('form_input error');
+        await expect (CheckoutSauce.lastNameInput).toHaveElementClassContaining('form_input error');
+        await expect (CheckoutSauce.zipCodeInput).toHaveElementClassContaining('form_input error');
     })
 });
-
