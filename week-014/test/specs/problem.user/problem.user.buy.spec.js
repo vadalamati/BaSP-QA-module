@@ -12,7 +12,7 @@ describe ('This test check Glich User buy processes', () => {
 
     })
     it('We can add items to cart and go there', async ()=> {
-        await InventorySauce.addItemsTocart();
+        await InventorySauce.buyItems();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html');
     })
     it ('Go to the checkout passing the cart', async ()=> {

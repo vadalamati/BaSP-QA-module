@@ -33,6 +33,11 @@ describe ('Header items test', ()=> {
         await Header.cartBtn.click();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html')
     })
+    it ('Navbar Logout should let us to the login', async () => {
+        await Header.burguerMenu.click();
+        await Header.resetApp.click();
+        await expect(Header.resetApp).toBeClickable();
+    })
 });
 
 
