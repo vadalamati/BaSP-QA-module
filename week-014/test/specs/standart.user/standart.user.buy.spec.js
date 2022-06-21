@@ -7,7 +7,6 @@ import CheckoutComplete from  '../../pageobjects/checkoutComplete'
 
 describe ('This test check Standard User buy processes', () => {
     it ('Standart User should login whit valid credentials successfully', async () => {
-        // await LoginSauce.open();
         await LoginSauce.login('standard_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     })

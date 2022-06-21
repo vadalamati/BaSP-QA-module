@@ -1,7 +1,7 @@
 class LoginSauce {
-    get inputUsername () {return $('#user-name')}
-    get inputPassword () {return $('#password');}
-    get btnLogin () {return $('#login-button');}
+    get inputUsername () {return $('#user-name')};
+    get inputPassword () {return $('#password')};
+    get btnLogin () {return $('#login-button')};
     get errorContainer () {return $('.error-message-container.error')};
     get botImg () {return $('.bot_column');};
     get loginLogo () {return $('.login_logo')};
