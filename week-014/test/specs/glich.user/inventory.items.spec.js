@@ -66,7 +66,7 @@ describe('Check web interactions for problem user', () => {
         await expect(InventorySauce.headerInventory).toBeDisplayed();
     });
 
-    afterAll ('Timeou', () => {
+    afterAll ('Timeout', () => {
         console.log(browser.getTimeouts());
     })
 });

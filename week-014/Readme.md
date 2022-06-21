@@ -56,11 +56,9 @@ test\specs\glich.user\glich.user.buy.spec.js
 
 ```
 
-This user, like the standard one, can carry out all the processes correctly, but it does so with a time delay when will need to go the inventory. The timeouts that the console throws are the following
+This user, like the standard one, can carry out all the processes correctly, but it does so with a time delay when will need to go the inventory.
 
-<img src="test-imgs\Glich-timeout.png">
 <img src="test-imgs\Glich-buy-ok.png">
-
 
 <br>
 <br>
@@ -71,12 +69,24 @@ test\specs\glich.user\iventory.items.spec.js
 
 ```
 
-This user, like the standard one, can check all iventory items, but it does so with a time delay when will everytime what we go to the inventory. The timeouts that the console throws are the following
+This user, like the standard one, can check all iventory items, but it does so with a time delay when will everytime what we go to the inventory.
 
-<img src="test-imgs\Glich-timeout.png">
 <img src="test-imgs\Glich-inv-ok.png">
 
 
+
+<br>
+
+
+**Glich user performance buy test:**
+```
+test\specs\glich.user\glich.user.buy.performance.spec.js
+
+```
+
+This user, like the standard one, can carry out all the processes correctly, but it does so with a time delay when will need to go the inventory. The test carsh cause the timeout has been changed as same in the inventory performance
+
+<img src="test-imgs\timeout-glich-user.png">
 
 <br>
 
@@ -100,12 +110,16 @@ Some add/remove buttons fails on this interactions, causing broken test
 
 <br>
 
+### Locked Out User tests:
+
+This user cannot login, so you can find it in test\specs\login.spec.js
+
+
 ### Autor
 
-|Photo | Name  | Mail | Github
-| :-----: | :-----: | :-----: | :-----: |
 
-<img src="https://avatars.githubusercontent.com/u/101281359?v=4" height="50" width="50">| Matías Daniel Vadala | vadalamati@gmail.com | [@vadalamati](https://github.com/vadalamati)
+ Matías Daniel Vadala | vadalamati@gmail.com | [@vadalamati](https://github.com/vadalamati)
+
 
 
 

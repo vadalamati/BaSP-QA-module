@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/glich.user/*.js'
+        './test/specs/header.spec.js'
     ],
     // Patterns to exclude.
     exclude: [

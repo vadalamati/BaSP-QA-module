@@ -5,7 +5,12 @@ import CheckoutSauce from  '../../pageobjects/checkout.sauce';
 import CheckoutSauceTwo from  '../../pageobjects/checkout.2'
 import CheckoutComplete from  '../../pageobjects/checkoutComplete'
 
-describe ('This test check Standard User buy processes', () => {
+describe ('This test check Standart User buy processes and its performance', () => {
+    let originalTimeout;
+   beforeEach(() => {
+     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+     jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
+   });
     it ('Standart User should login whit valid credentials successfully', async () => {
         await LoginSauce.login('standard_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
@@ -27,5 +32,8 @@ describe ('This test check Standard User buy processes', () => {
         await CheckoutComplete.backHomeButton.click();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     })
+    afterEach(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
 });
 

@@ -2,13 +2,17 @@ import LoginSauce from  '../../pageobjects/sauce.login';
 import InventorySauce from  '../../pageobjects/sauce.inventory';
 
 beforeAll('We need login first', () => {
-    LoginSauce.login('standard_user', 'secret_sauce');
+    LoginSauce.login('performance_glitch_user', 'secret_sauce');
 });
 
-describe('Check web interactions', () => {
-    it ('Check all the add/remove buttons, if i add items tu cart, text card should be modified', async ()=> {
+describe('Check web interactions for problem user', () => {
+    let originalTimeout;
+    beforeEach(() => {
+      originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+      jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
+    });
+    it ('Check all the add/remove buttons', async ()=> {
         await InventorySauce.addItemsTocart();
-        await expect (InventorySauce.cartBtn).toHaveText('6');
         await InventorySauce.remItemsTocart();
     });
     it ('Check all interactions from item 0', async () => {
@@ -41,7 +45,8 @@ describe('Check web interactions', () => {
         await InventorySauce.item3Clicks();
         const goBackButton = await $('#back-to-products');
         await goBackButton.click();
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+        console.log(browser.getTimeouts());
     })
     it ('Check all interactions from item 4', async () => {
         await InventorySauce.slbTittle.click();
@@ -64,9 +69,8 @@ describe('Check web interactions', () => {
     });
     it ('Inventory Header must be deployed', async ()=> {
         await expect(InventorySauce.headerInventory).toBeDisplayed();
-    })
-    afterAll ('Timeout', () => {
-        console.log(browser.getTimeouts());
-    })
-
+    });
+    afterEach(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
 });

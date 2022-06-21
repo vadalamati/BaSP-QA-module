@@ -63,6 +63,7 @@ describe('Check web interactions for problem user', () => {
     });
     it ('Inventory Header must be deployed', async ()=> {
         await expect(InventorySauce.headerInventory).toBeDisplayed();
-    })
+        console.log(browser.getTimeouts());
+    });
 
 });

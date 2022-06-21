@@ -4,7 +4,12 @@ import CartSauce from '../../pageobjects/cart.sauce';
 import CheckoutSauce from  '../../pageobjects/checkout.sauce';
 
 
-describe ('This test check Glich User buy processes', () => {
+describe ('This test check Problem User buy processes and performance', () => {
+    let originalTimeout;
+   beforeEach(() => {
+     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+     jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
+    });
     it ('Glich User should login whit valid credentials successfully', async () => {
         await LoginSauce.open();
         await LoginSauce.login('problem_user', 'secret_sauce');
@@ -26,5 +31,8 @@ describe ('This test check Glich User buy processes', () => {
         await expect (CheckoutSauce.lastNameInput).toHaveElementClassContaining('form_input error');
         await expect (CheckoutSauce.zipCodeInput).toHaveElementClassContaining('form_input error');
         await expect (CheckoutSauce.errorContainer).toBeDisplayed();
+    })
+    afterAll ('Timeout', () => {
+        console.log(browser.getTimeouts());
     })
 });

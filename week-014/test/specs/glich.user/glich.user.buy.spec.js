@@ -5,13 +5,13 @@ import CheckoutSauce from  '../../pageobjects/checkout.sauce';
 import CheckoutSauceTwo from  '../../pageobjects/checkout.2';
 import CheckoutComplete from  '../../pageobjects/checkoutComplete';
 
-describe ('This test check Glich User buy processes', () => {
-    it ('Glich User should login whit valid credentials successfully', async () => {
+describe ('This test check Glich User buy processes and its performance', () => {
+    it("Glich user Login", async () => {
         await LoginSauce.open();
         await LoginSauce.login('performance_glitch_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+    });
 
-    })
     it('We can add items to cart and go there', async ()=> {
         await InventorySauce.buyItems();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html');
@@ -26,9 +26,9 @@ describe ('This test check Glich User buy processes', () => {
         await CheckoutSauceTwo.finishButton.click();
     })
     it ('Check the checkout complete', async () =>{
-        await CheckoutComplete.backHomeButton.click();
+    await CheckoutComplete.backHomeButton.click();
         console.log(browser.getTimeouts());
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     })
 });
 
