@@ -10,7 +10,7 @@ describe ('This test check Problem User buy processes and performance', () => {
      originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
      jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
     });
-    it ('Glich User should login whit valid credentials successfully', async () => {
+    it ('Problem user should login whit valid credentials successfully', async () => {
         await LoginSauce.open();
         await LoginSauce.login('problem_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
@@ -32,7 +32,7 @@ describe ('This test check Problem User buy processes and performance', () => {
         await expect (CheckoutSauce.zipCodeInput).toHaveElementClassContaining('form_input error');
         await expect (CheckoutSauce.errorContainer).toBeDisplayed();
     })
-    afterAll ('Timeout', () => {
-        console.log(browser.getTimeouts());
-    })
+    afterEach(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
 });

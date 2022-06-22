@@ -28,6 +28,5 @@ describe ('User login', () => {
     it ('False credentials should display error', async () => {
         await LoginSauce.login('falseuser', 'falsepass');
         await expect(LoginSauce.errorContainer).toHaveText('Epic sadface: Username and password do not match any user in this service');
-        console.log(browser.getTimeouts());
     })
 });

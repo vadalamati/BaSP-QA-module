@@ -94,7 +94,9 @@ This user, like the standard one, can carry out all the processes correctly, but
 
 **Problem User Buy Test:**
 
-*test\specs\problem.user\problem.user.buy.spec.js*
+```
+test\specs\problem.user\problem.user.buy.spec.js
+```
 
 This user cannot complete the form in **Payment Step One** because they have an error entering the last name. In these tests I verify that the modal error is displayed correctly
 
@@ -102,11 +104,24 @@ This user cannot complete the form in **Payment Step One** because they have an 
 
 **Problem User Inventory Test:**
 
-*test\specs\problem.user\inventory.items.spec.js*
+```
+test\specs\problem.user\inventory.items.spec.js
+```
 
 Some add/remove buttons fails on this interactions, causing broken test
 
 <img src="test-imgs\Problem-user-i.png">
+
+<br>
+
+**Problem user Performance Test**
+
+```
+test\specs\problem.user\inventory.items.performance.spec.js
+```
+
+This test fails because some interactions have errors that cause it to time out.
+
 
 <br>
 

@@ -19,7 +19,6 @@ describe ('This test check all form error are possibles', () => {
         await expect(LoginSauce.errorContainer).toHaveText('Error: First Name is required');
     });
     it('If whe not complet last name, error modal should be deployed', async () => {
-        // browser.url()
         await CheckoutSauce.completeForm('Matias', '', '2000');
         await expect(LoginSauce.errorContainer).toHaveText('Error: Last Name is required');
     });
